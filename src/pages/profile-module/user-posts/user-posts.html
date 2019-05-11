@@ -1,0 +1,26 @@
+<!--
+  Generated template for the UserPostsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="maincolor">
+    <ion-title>{{userDetails.name}}'s Posts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="pins">
+    <ion-card class="pin" *ngFor="let post of userPosts; let i = index;">
+      
+      <div >
+          <img src="https://i.pravatar.cc/150?img={{i + userId + 30}}" imageViewer> 
+          <div (tap)="openPostDetails(post)" *ngIf="post.title" class="post-description">
+            <small>{{ post.title }}</small>
+          </div>
+      </div>
+
+    </ion-card>
+  </div>
+</ion-content>

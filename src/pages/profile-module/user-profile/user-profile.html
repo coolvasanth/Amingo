@@ -1,0 +1,26 @@
+
+<ion-content padding class="transparent-header">
+  <ion-header no-border>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + userDetails.coverImage +')'}"></div>
+  <div id="content">
+    <div id="profile-info" padding>
+      <img id="profile-image" [src]="userDetails.profileImage">
+      <h3 id="profile-name">{{userDetails.name}}</h3>
+      <p> <ion-icon name="pin"></ion-icon> {{userDetails.location}}</p>
+      <button ion-button small color="purple" (tap)="openUserPosts()" >10 Posts</button>
+    </div>
+    <hr/>
+  </div>
+
+    <!-- user photo section -->
+    <span>Photos</span>
+    <hr>
+    <div class="images" >
+      <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11]">
+        <img src="https://i.pravatar.cc/150?img={{image}}">
+      </div>
+    </div>
+</ion-content>

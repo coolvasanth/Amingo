@@ -1,0 +1,22 @@
+
+<ion-header no-border >
+  <ion-navbar color="maincolor">
+      <button ion-button menuToggle>
+          <ion-icon name="options"></ion-icon>
+        </button>
+    <ion-title>User List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let user of userList; let i = index;" (tap)="openUserProfile(user)">
+      <ion-avatar item-start>
+        <img src="https://i.pravatar.cc/150?img={{i+1}}">
+      </ion-avatar>
+      <h2>{{user.name}}</h2>
+      <p>{{user.website}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="maincolor">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <div style="height:35%;background-color:  #4fc3f7">
+          <img style="width: 120px;height: 120px;border-radius: 60px;margin-top: 8%;margin-left: 12%;" src="https://i.pravatar.cc/300" imageViewer >
+          <br>
+          <p class="whitecolor" style="padding-left:12%;color:  white">Cosima Niehaus</p>
+      </div>
+     <ion-list>
+      <button style="color: #4fc3f7;" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon>  &nbsp; {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

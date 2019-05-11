@@ -1,0 +1,30 @@
+
+<ion-header no-border >
+  <ion-navbar color="maincolor">
+      <button ion-button menuToggle>
+          <ion-icon name="options"></ion-icon>
+        </button>
+    <ion-title>Amingo Room</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="pins">
+    <ion-card class="pin" *ngFor="let post of allPosts; let i = index;">
+      <div >
+          <img src="https://i.pravatar.cc/{{i + 300}}" imageViewer > 
+          <div (tap)="openPostDetails(post)" *ngIf="post.title" class="post-description">
+            <small>{{ post.title }}</small>
+          </div>
+      </div>
+
+      <ion-item (tap)="openUserProfile(post)">
+        <ion-avatar item-start>
+          <img src="https://i.pravatar.cc/150?img={{post.userId}}">
+        </ion-avatar>
+        <small>Usernama {{i}}</small>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>
